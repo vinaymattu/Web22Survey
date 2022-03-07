@@ -48,7 +48,7 @@ router.post('/add', (req, res, next) => {
       }
       else
       {
-          // refresh the contact list
+          // refresh the book list
           res.redirect('/books')
       }
   })
@@ -93,7 +93,7 @@ router.post('/:id', (req, res, next) => {
       }
       else
       {
-          // refresh the contact list
+          // refresh the book list
           res.redirect('/books')
       }
   });
@@ -111,7 +111,7 @@ router.get('/delete/:id', (req, res, next) => {
       }
       else
       {
-          // refresh the contact list
+          // refresh the book list
           res.redirect('/books')
       }
   });
