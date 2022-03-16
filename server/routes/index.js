@@ -8,14 +8,21 @@ let router = express.Router();
 let mongoose = require('mongoose');
 
 // define the game model
-let book = require('../models/books');
+let survey = require('../models/surveys');
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
-  res.render('content/index', {
-    title: 'Home',
-    books: ''
-   });
+  survey.find( (err, surveys) => {
+    if (err) {
+      return console.error(err);
+    }
+    else {
+      res.render('surveys/index', {
+        title: 'Home',
+        surveys: surveys
+      });
+    }
+  });
 });
 
 module.exports = router;
